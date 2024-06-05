@@ -15,7 +15,7 @@ function price(ownedItems){
 const items = {
     common:["Amogus", "sus","Sunflower"],
     rare:["Mimikyu","Colette_Tatou"],
-    epic:["Miku"],
+    epic:["Miku","Goose"],
     legendary:["Ogerpon","Kyougen"]
 }
 const itemImages = {
@@ -25,6 +25,7 @@ const itemImages = {
     Mimikyu: 'images/mimikyu.png',
     Colette_Tatou:'images/ColetteTatou.webp',
     Miku: 'images/miku.png',
+    Goose: 'images/goofygoose.png',
     Ogerpon: 'images/ogerpon.png',
     Kyougen: 'images/kyougen.jpg'
 };

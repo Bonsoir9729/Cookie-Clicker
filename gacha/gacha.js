@@ -25,7 +25,7 @@ const itemImages = {
     Mimikyu: 'images/mimikyu.png',
     Colette_Tatou:'images/ColetteTatou.webp',
     Miku: 'images/miku.png',
-    Goose: 'images/goofygoose.png',
+    Goose: 'images/goofygoose.jpg',
     Ogerpon: 'images/ogerpon.png',
     Kyougen: 'images/kyougen.jpg'
 };

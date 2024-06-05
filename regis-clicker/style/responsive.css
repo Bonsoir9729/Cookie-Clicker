@@ -1,0 +1,68 @@
+@media screen and (min-width: 1024px) {
+    .game {
+      grid-template-columns: 70vw 30vw;
+      grid-template-rows: 100vh;
+    }
+    .upgrades {
+      flex-flow: column;
+    }
+    .upgrade {
+        border-bottom: solid var(--border) rgb(var(--primary));
+    }
+    .click {
+      height: 100vh;
+    }
+    #clicker {
+      width: calc(.4 * 70vw);
+      height: calc(.4 * 70vw);
+    }
+  }
+  @media screen and (max-width: 1023px) and (min-width: 768px) {
+    .game {
+      grid-template-columns: 70vw 30vw;
+      grid-template-rows: 100vh;
+    }
+    .upgrades {
+      flex-flow: column;
+    }
+    .upgrade {
+        border-bottom: solid var(--border) rgb(var(--primary));
+    }
+    .click {
+      height: 100vh;
+    }
+    #clicker {
+      width: 30%;
+    }
+  }
+  @media screen and (max-width: 766px) {
+    :root {
+        --click-height: calc(100vh - var(--image-size) - 2vmin - 4px);
+    }
+    .game {
+      grid-template-columns: 100vw;
+      grid-template-rows: var(--click-height) calc(var(--image-size) + 2vmin + 4px);
+    }
+    .upgrades {
+      flex-flow: row;
+    }
+    .upgrade {
+        border-right: solid var(--border) rgb(var(--primary));
+        grid-template-rows: calc(1 * var(--image-size) / 2) repeat(2, calc(var(--image-size) / 4));
+    }
+    .upgrade > .name {
+        font-size: 1.5rem;
+    }
+    .upgrade > .count {
+        font-size: calc(2 * var(--image-size) / 3);
+    }
+    .upgrade > .effect {
+        font-size: 0.8rem;
+    }
+    .cick {
+      height: 100%;
+    }
+    #clicker {
+      height: 40%;
+    }
+  }

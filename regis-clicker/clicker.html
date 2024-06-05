@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/clicker.css" />
+  <link rel="stylesheet" href="./style/responsive.css">
+  <script src="./javascript/clicker.js" type="module"></script>
+  <script src="./javascript/upgrades.js" type="module"></script>
+  <title>Régis Clicker</title>
+  <link rel="icon" href="./graphics/da/icon.ico">
+</head>
+
+<body>
+  <div class="containers">
+    <div class="stats">
+      <p class="perClick"></p>
+      <p class="perSecond"></p>
+    </div>
+    <div class="menu-container">
+      <button class="menu">
+        <img class="open-menu" src="./graphics/menu.svg" alt="">
+      </button>
+      <button class="dropdownbutton" id="reset">Reset</button>
+      <button class="dropdownbutton"><a href="./gacha/gacha.html" id="gacha">Gacha</a></button>
+    </div>
+  </div>
+  <div class="game">
+    <div class="click">
+      <button id="clicker"><img src="./graphics/da/regis.png" draggable="false" alt="" /></button>
+      <p id="count">0</p>
+    </div>
+    <ul class="upgrades"></ul>
+  </div>
+  <template id="templates">
+    <li class="upgrade" id="hoven">
+      <img class="image" src="" alt="" />
+      <p class="name">name</p>
+      <p class="count"></p>
+      <p class="price">100</p>
+      <div class="effect" id="second" value="5" style="display: flex;">
+        <p>+5 per seconds</p>
+      </div>
+    </li>
+  </template>
+</body>
+
+</html>

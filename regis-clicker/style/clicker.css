@@ -1,0 +1,218 @@
+* {
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+:root {
+  --image-size: 10vh;
+  --text: 238, 237, 232;
+  --background: 23, 23, 17;
+  --primary: 195, 192, 173;
+  --secondary: 70, 74, 95;
+  --accent: 162, 133, 166;
+}
+
+body {
+  background: rgb(var(--background));
+  color: rgb(var(--text));
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+}
+
+.click {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+.click > p {
+  font-weight: 900;
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(var(--text), 0.7);
+}
+
+#clicker {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+#clicker > img {
+  aspect-ratio: 1;
+  height: 100%;
+}
+
+.upgrades {
+  --border: 2px;
+  position: relative;
+  display: flex;
+  background-color: rgba(var(--background), 0.5);
+  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 1));
+  border: solid var(--border) rgb(var(--primary));
+  overflow-y: scroll;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  box-sizing: border-box;
+}
+.upgrades::-webkit-scrollbar {
+  display: none;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.gachaUpgrades {
+  position: relative;
+}
+
+.upgrade {
+  background-color: rgb(var(--background));
+  padding: 1vmin;
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  column-gap: 1vmin;
+  grid-template-columns: calc(var(--image-size)) auto;
+  grid-template-rows: calc(3 * var(--image-size) / 5) repeat(
+      2,
+      calc(var(--image-size) / 5)
+    );
+}
+.upgrade:hover {
+  background: rgba(var(--primary), 0.8);
+}
+.upgrade > .image {
+  grid-area: 1 / 1 / 4 / 2;
+  width: var(--image-size);
+}
+.upgrade > .name {
+  font-size: 2rem;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(var(--text), 0.7);
+  grid-area: 1 / 2 / 2 / 3;
+}
+.upgrade > .count {
+  position: absolute;
+  text-align: end;
+  top: calc(50%);
+  right: 1vmin;
+  transform: translate(0, -50%);
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(var(--text), 0.5);
+}
+.upgrade > .effect {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.upgrade > .effect::before {
+  content: "effect: ";
+}
+.upgrade > .price {
+  font-weight: 700;
+  grid-area: 3 / 2 / 4 / 3;
+}
+.upgrade > .price::before {
+  content: "$";
+}
+.upgrade > li > p,
+div > p {
+  white-space: nowrap;
+}
+
+.containers {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  gap: 2vmin;
+  top: 15px;
+  left: 15px;
+}
+
+.stats {
+  /* position: absolute; */
+  background: rgb(var(--accent));
+  border: solid 2px rgb(var(--primary));
+  padding: 2vmin;
+  border-radius: 10px;
+}
+.stats > .perSecond,
+.perClick {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.stats > .perSecond::before,
+.perClick::before {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: 0.5vmin;
+}
+.stats > .perClick::before {
+  content: "per click:";
+}
+.stats > .perSecond::before {
+  content: "per second:";
+}
+
+.menu-container {
+  display: flex;
+  flex-flow: column;
+  gap: 1vmin;
+}
+
+.menu {
+  border: none;
+  background-color: rgb(var(--accent));
+  border: solid 1px rgb(var(--text));
+  outline: none;
+  cursor: pointer;
+  color: var(--text);
+  padding: 1.5vmin;
+  aspect-ratio: 1;
+  max-width: 70px;
+  border-radius: 50%;
+  transform: rotate(0deg);
+  transition: 0.2s ease-in-out;
+}
+
+.dropdownbutton {
+  display: none;
+  border: none;
+  background-color: rgb(var(--secondary));
+  outline: none;
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 700;
+  padding: 1vmin;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  width: 70px;
+}
+
+.open {
+  transform: rotate(90deg);
+  transition: 0.2s ease-in-out;
+}
+
+#gacha {
+  text-decoration: none;
+  color: white;
+}

@@ -8,18 +8,24 @@ let points = 10000000
 var ownedItemsDiv = document.getElementById('items')
 const ownedItems = {}
 const items = {
-    common:["Amogus", "Sunflower"],
-    rare:["Mimikyu","Colette_Tatou"],
-    epic:["Miku"],
+    common:["Amogus", "Sunflower","Umbrella","Goose","Cookie"],
+    rare:["Mimikyu","Colette_Tatou","Galvanized_Square_Steel"],
+    epic:["Miku","Basculegion","King_Baldwin"],
     legendary:["Ogerpon","Kyougen"]
 }
 const itemImages = {
     Amogus: 'images/amogus.webp',
     sus: 'images/ticket.png',
     Sunflower: 'images/Sunflowerpvz.webp',
+    Umbrella:'images/umbrella.webp',
+    Goose: 'images/goofygoose.jpg',
+    Cookie: 'images/cookie.jpg',
     Mimikyu: 'images/mimikyu.png',
     Colette_Tatou:'images/ColetteTatou.webp',
+    Galvanized_Square_Steel:'images/galvanizedsteel.png',
     Miku: 'images/miku.png',
+    Basculegion: 'images/basculegion.jpg',
+    King_Baldwin: 'images/kingbaldwin.jpeg',
     Ogerpon: 'images/ogerpon.png',
     Kyougen: 'images/kyougen.jpg'
 };

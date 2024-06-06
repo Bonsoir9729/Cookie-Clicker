@@ -1,33 +1,73 @@
 export const data = [
   {
-    "name": "hoven",
-    "price": 25,
+    "name": "caveman",
+    "price": 20,
     "effect": "second",
     "value": 1,
-    "image": "./graphics/upgrades/upgrade1.png"
+    "age": 0,
+    "image": "./graphics/caveman.png"
   },{
-    "name": "tnt",
-    "price": 100,
+    "name": "bat",
+    "price": 200,
     "effect": "click",
-    "value": 0.1,
-    "image": "./graphics/upgrades/upgrade2.png"
+    "value": 1,
+    "age": 0,
+    "image": "./graphics/bat.png"
   },{
-    "name": "steve",
-    "price": 2000,
+    "name": "roman",
+    "price": 500,
     "effect": "second",
     "value": 10,
-    "image": "./graphics/upgrades/upgrade3.png"
+    "age": 1,
+    "image": "./graphics/roman.png"
   },{
-    "name": "picasso",
-    "price": 3000,
+    "name": "spear",
+    "price": 2500,
     "effect": "click",
-    "value": 1,
-    "image": "./graphics/upgrades/upgrade4.png"
+    "value": 5,
+    "age": 1,
+    "image": "./graphics/spear.png"
   }, {
-    "name": "régis",
-    "price": 20000,
+    "name": "knight",
+    "price": 7500,
     "effect": "second",
+    "value": 100,
+    "age": 2,
+    "image": "./graphics/knight.png"
+  }, {
+    "name": "sword",
+    "price": 25000,
+    "effect": "click",
     "value": 50,
-    "image": "./graphics/upgrades/upgrade5.png"
+    "age": 2,
+    "image": "./graphics/sword.png"
+  }, {
+    "name": "noble",
+    "price": 50000,
+    "effect": "second",
+    "value": 1000,
+    "age": 3,
+    "image": "./graphics/noble.png"
+  }, {
+    "name": "baionnette",
+    "price": 200000,
+    "effect": "click",
+    "value": 500,
+    "age": 3,
+    "image": "./graphics/fusil.png"
+  }, {
+    "name": "CRS",
+    "price": 1000000,
+    "effect": "second",
+    "value": 10000,
+    "age": 4,
+    "image": "./graphics/crs.png"
+  }, {
+    "name": "AK47",
+    "price": 5000000,
+    "effect": "click",
+    "value": 5000,
+    "age": 4,
+    "image": "./graphics/ak47.png"
   }
 ]

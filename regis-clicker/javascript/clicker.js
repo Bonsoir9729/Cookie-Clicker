@@ -5,10 +5,13 @@ const menuButton = document.querySelector(".menu");
 const resetButton = document.querySelector("#reset");
 const number = document.querySelector("#count");
 const upgrades = document.querySelector(".upgrades");
+let backgrounds = ['cave', 'temple', 'castle', 'revolution', 'army']
 
 let count = parseInt(localStorage.getItem("points")) || 0;
 let perSecond = 0;
 let perClick = 1;
+let background = 0
+
 
 function initUpgradesCount() {
   const obj = {};
@@ -56,8 +59,19 @@ async function buyUpgrade(e) {
     upgradesCount[id] += 1;
     updateStats();
     updatePrice(upgrade, price);
+    UpdateBackground()
   }
 }
+
+function UpdateBackground(){
+  data.forEach(upgrade => {
+    if (upgrade["age"] > background && upgradesCount[data.indexOf(upgrade)] > 0){
+      background = upgrade["age"]
+    }
+  })
+  document.body.background = '/graphics/' + backgrounds[background] + '.jpg';
+}
+UpdateBackground()
 
 addUpgrades(data);
 const buyButtons = document.querySelectorAll(".upgrade");
@@ -100,6 +114,8 @@ function reset() {
     upgradesCount[key] = 0;
   });
   updateStats();
+  background = 0;
+  UpdateBackground()
 }
 
 function getSiblings(e) {

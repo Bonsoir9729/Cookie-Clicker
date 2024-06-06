@@ -1,21 +1,16 @@
 var pull1 = document.getElementById('pull')
 var pull10 = document.getElementById('pull10')
+var price1 = document.getElementById('price1')
+var price10 = document.getElementById('price10')
 var reward = document.getElementById('reward')
-let balance = 100
+var balance = document.getElementById('balance')
+let points = 10000000
 var ownedItemsDiv = document.getElementById('items')
 const ownedItems = {}
-function price(ownedItems){
-    e = 2.71828;
-    ownedItemsNum = 10;
-    Object.values(ownedItems).forEach(element => {
-        ownedItemsNum += element
-    })
-    return Math.floor(((ownedItemsNum ** 2)  * (e ** (ownedItemsNum/2)))/100000) + 100;
-}
 const items = {
-    common:["Amogus", "sus","Sunflower"],
+    common:["Amogus", "Sunflower"],
     rare:["Mimikyu","Colette_Tatou"],
-    epic:["Miku","Goose"],
+    epic:["Miku"],
     legendary:["Ogerpon","Kyougen"]
 }
 const itemImages = {
@@ -25,7 +20,6 @@ const itemImages = {
     Mimikyu: 'images/mimikyu.png',
     Colette_Tatou:'images/ColetteTatou.webp',
     Miku: 'images/miku.png',
-    Goose: 'images/goofygoose.jpg',
     Ogerpon: 'images/ogerpon.png',
     Kyougen: 'images/kyougen.jpg'
 };
@@ -34,6 +28,18 @@ Object.values(items).forEach(element => {
         ownedItems[item] = 0;
     })
 })
+
+function getNumItems(ownedItems){
+    numItems = 0;
+    Object.values(ownedItems).forEach(element => {
+        numItems += element;
+    })
+    return numItems;
+}
+
+function Price(numItems){
+    return 100*(numItems**2) + 100;
+}
 
 function displayOwnedItems() {
     ownedItemsDiv.innerHTML = '';
@@ -58,6 +64,7 @@ function displayOwnedItems() {
 
         ownedItemsDiv.appendChild(itemContainer);
     });
+    balance.textContent = points
 }
 
 displayOwnedItems()
@@ -84,6 +91,7 @@ function randomItem(rarity){
 }
 
 function pull(){
+    points -= Price(getNumItems(ownedItems))
     item = randomItem(randomRarity());
     ownedItems[item] += 1;
     ownedItemsDiv.textContent = '';
@@ -104,17 +112,36 @@ function updateRewardDisplay(items) {
     });
 }
 
+function updatePrice(){
+    price1.textContent = Price(getNumItems(ownedItems));
+    price = 0
+    numItems = getNumItems(ownedItems)
+    for (let i=0;i<10;i++){
+        price += Price(numItems + i)
+    }
+    price10.textContent = price
+}
+
 pull1.addEventListener('click', function () {
+    if (price1.textContent > points){
+        console.log('not enough money')
+        return;
+    }
     const pulledItem = pull();
     updateRewardDisplay([pulledItem]);
-    console.log(price(ownedItems));
+    updatePrice()
 });
 
 pull10.addEventListener('click', function () {
+    if (price10.textContent > points){
+        console.log('not enough money')
+        return;
+    }
     const pulledItems = [];
     for (let i = 0; i < 10; i++) {
         pulledItems.push(pull());
     }
     updateRewardDisplay(pulledItems);
-    console.log(price(ownedItems));
+    updatePrice()
 });
+updatePrice()
